@@ -1,0 +1,87 @@
+.multiselect {
+	font-size: var(--bs-font-size) !important;
+	padding: 0.25rem .75rem !important;
+	min-height: calc(1.5em + (0.5rem + 2px));
+}
+.multiselect-wrapper {
+	min-height: auto !important;
+}
+
+.multiselect-placeholder {
+	left: 0;
+	text-transform: none;
+	top: -5px;
+	color: #495057;
+	display: block;
+	width: 100%;
+	align-items: center;
+	font-weight: normal;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 2rem 0 0 !important;
+	height: auto;
+	transform: translateY(50%);
+	line-height: 1.1;
+}
+
+.multiselect-placeholder[aria-hidden="true"],
+.multiselect-caret[aria-hidden="true"]{
+	/*display: none;*/
+}
+
+.multiselect-clear ~ .multiselect-caret {
+	display: none;
+}
+
+.multiselect-caret {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 12;
+	width: 30px;
+	height: 100%;
+	-webkit-mask-image: none;
+	mask-image: none;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+	background-color: transparent;
+	background-repeat: no-repeat;
+	margin-right: 0;
+	background-size: 16px 12px;
+	background-position: right 0 center;
+}
+
+.multiselect-caret.is-open {
+	transform: none;
+}
+
+.multiselect-tags,
+.multiselect-tags-search-wrapper {
+	margin: 0;
+	padding: 0;
+}
+
+.multiselect-tags {
+	gap: 5px;
+}
+
+.multiselect-tag {
+	font-size: 0.6rem;
+	margin: 0;
+	line-height: var(--ms-tag-line-height, 0.6rem);
+	padding: 0 0 0 7px;
+}
+
+.multiselect-tag-remove {
+	padding: var(--ms-tag-remove-py,.2rem) var(--ms-tag-remove-px,.25rem);
+}
+
+.multiselect-option {
+	font-weight: normal !important;
+	font-size: 0.8085rem !important;
+	text-transform: none !important;
+}
+
+.multiselect-clear {
+	padding: 0;
+}

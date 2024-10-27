@@ -1,0 +1,158 @@
+{
+  "name": "dn-frontend",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "npm": "^8.0",
+    "node": "^16.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build-is": "vite build --emptyOutDir",
+    "build-portal": "vite build --emptyOutDir --mode portal -c vite.portal.config.js",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .vue --max-warnings=0",
+    "lintfix": "eslint src --fix --ext .vue"
+  },
+  "dependencies": {
+    "@vueform/multiselect": "^2.5.6",
+    "@vuelidate/core": "^2.0.0-alpha.34",
+    "@vuelidate/validators": "^2.0.0-alpha.26",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.0",
+    "chart.js": "^4.2.1",
+    "floating-vue": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "fslightbox-vue": "^2.0.1",
+    "hes-gallery": "^1.5.1",
+    "ionicons-npm": "^2.0.1",
+    "lodash-es": "^4.17.21",
+    "lodash.debounce": "^4.0",
+    "moment": "^2.29.1",
+    "pe7-icon": "^1.0.4",
+    "vite-plugin-ejs": "1.5.0",
+    "vue": "^3.4.21",
+    "vue-chartjs": "^5.2.0",
+    "vue-mention": "^2.0.0-alpha.3",
+    "vue-router": "^4.0",
+    "vue-tel-input": "^8.3.1",
+    "vue-toast-notification": "3.0",
+    "vue3-loading-overlay": "^0.0.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.0",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "eslint": "^8.20.0",
+    "eslint-plugin-vue": "^8.0",
+    "jquery": "^3.6.1",
+    "vite": "^4.5.2",
+    "vite-plugin-eslint": "^1.7.0",
+    "vite-plugin-static-copy": "^0.17.1"
+  },
+  "eslintIgnore": [
+    "src/assets/*"
+  ],
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-recommended",
+      "eslint:recommended"
+    ],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+      "parser": "@babel/eslint-parser",
+      "sourceType": "module"
+    },
+    "rules": {
+      "curly": [
+        "error",
+        "all"
+      ],
+      "semi": "error",
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "keyword-spacing": [
+        "error",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "vue/keyword-spacing": [
+        "error",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "space-before-blocks": [
+        "error",
+        {
+          "functions": "always",
+          "keywords": "always",
+          "classes": "always"
+        }
+      ],
+      "vue/multi-word-component-names": "off",
+      "vue/no-arrow-functions-in-watch": "off",
+      "vue/no-mutating-props": "off",
+      "vue/no-lone-template": "off",
+      "vue/no-v-html": "off",
+      "vue/singleline-html-element-content-newline": "off",
+      "key-spacing": [
+        "error",
+        {
+          "beforeColon": false,
+          "afterColon": true
+        }
+      ],
+      "vue/no-unused-properties": [
+        "error",
+        {
+          "groups": [
+            "props",
+            "data",
+            "computed"
+          ]
+        }
+      ],
+      "comma-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "vue/comma-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "vue/arrow-spacing": [
+        "error",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "vue/max-attributes-per-line": [
+        "error",
+        {
+          "singleline": {
+            "max": 12
+          },
+          "multiline": {
+            "max": 1
+          }
+        }
+      ]
+    }
+  }
+}

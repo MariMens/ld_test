@@ -1,0 +1,88 @@
+:root {
+	--bs-font-size: 0.88rem;
+	--version-color: #89c53f;
+}
+
+#app.portal {
+	font-size: var(--bs-font-size) !important;
+}
+
+#app.portal strong {
+	font-weight: 600;
+}
+
+#app.portal .vertical-nav-menu li.mm-active > a {
+	font-weight: 600;
+}
+
+#app.portal .form-control-sm,
+#app.portal .form-select-sm {
+	font-size: var(--bs-font-size) !important;
+	padding: .25rem 1.5rem .25rem .75rem;
+}
+
+#app.portal .multiselect {
+	font-size: var(--bs-font-size) !important;
+	padding: 0.25rem .75rem !important;
+}
+
+#app.portal .multiselect-placeholder {
+	padding: 0 2rem 0 0 !important;
+}
+
+#app.portal .multiselect-caret {
+	background-position: right 0 center;
+}
+
+#app.portal .multiselect-clear {
+	padding: 0;
+}
+
+#app.portal .btn-group-xs > .btn,
+#app.portal .btn-xs {
+	font-size: var(--bs-font-size) !important;
+}
+
+#app.portal .btn-sm,
+#app.portal .btn-group-sm > .btn {
+	font-size: var(--bs-font-size) !important;
+}
+
+#app.portal .btn-group-xs > .btn,
+#app.portal .btn-xs {
+	font-size: var(--bs-font-size) !important;
+}
+
+#app.portal .bg-premium-dark {
+	background-color: var(--version-color) !important;
+	background-image: none !important;
+}
+
+#app.portal .app-header.header-text-light .app-header-left > .nav > li > .nav-link,
+#app.portal .widget-content .widget-content-left .widget-heading {
+	color: white;
+	opacity: 1;
+}
+
+#app.portal .widget-subheading {
+	opacity: 1;
+}
+
+#app.portal .app-main__inner {
+	background-image: url('../images/brand-logo.webp');
+	background-repeat: no-repeat;
+	background-size: 300px;
+	background-position: 100% 120%;
+}
+
+.vendor-registration-container {
+	overflow-x: hidden;
+}
+
+.vendor-registration-container .card {
+	box-shadow: none;
+}
+
+#app.portal h5:not(.card-title) {
+	font-size: 1.5rem; font-weight: bold;
+}
