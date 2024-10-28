@@ -2,7 +2,7 @@
   <div id="app" class="p-5">
     <h1>Testovací formulář <span style="font-size: 0.9rem;">Pozn: (<i>tady bude zobrazena poznámka z formulářů</i>).</span></h1>
     <div style="font-size: larger">
-      <a href="">Dospělý</a> | <a href="">Dítě</a>
+      <a href="/form-dospely">Dospělý</a> | <a href="/form-dite">Dítě</a>
     </div>
     <br><br>
     Pohlaví:

@@ -22,6 +22,7 @@ import BaseGridFilter from '@/components/BaseGridFilter.vue';
 import BaseGridExportButton from '@/components/BaseGridExportButton.vue';
 import axios from 'axios';
 import Form from '@/views/Form.vue';
+import FormDospely from '@/views/FormDospely.vue';
 
 import './assets/css/base.css';
 import './assets/css/adds.css';
@@ -38,7 +39,10 @@ import VueToast from 'vue-toast-notification';
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: Object.values([{name: 'form', path: '/form-dite', component: Form}]),
+    routes: Object.values([
+        {name: 'form', path: '/form-dite', component: Form},
+        {name: 'formDospely', path: '/form-dospely', component: FormDospely},
+    ]),
 });
 
 

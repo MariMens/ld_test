@@ -1,8 +1,9 @@
 <template>
-  <DataForm ref="form" :data="inputs" :validation="v$" :request="{url: url, method: 'post', data: {_op: 'createPenalty'}}" @success="handleSuccessConfirm">
+  <DataForm ref="form-dospely" :data="inputs" :validation="v$" :request="{url: url, method: 'post', data: {_op: 'createPenalty'}}" @success="handleSuccessConfirm">
     <div class="row mt-2">
       <DataFormInput wrap="col-lg-6" name="fullName" label="Celé jméno" type="text" />
       <DataFormInput wrap="col-lg-6" name="birthdate" label="Narození" type="date" />
+      <DataFormInput wrap="col-lg-6" name="numberOP" label="Číslo OP *" type="text" :is-required="true" />
     </div>
     <div class="row">
       <DataFormSelect :values="{'none':'bez vlasů', 'short': 'krátké', 'long': 'dlouhé'}" wrap="col-lg-6" name="hairType" label="Typ vlasů *" prompt="Typ vlasů" />
