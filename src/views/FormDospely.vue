@@ -1,9 +1,9 @@
 <template>
-  <DataForm ref="form-dospely" :data="inputs" :validation="v$" :request="{url: url, method: 'post', data: {_op: 'createPenalty'}}" @success="handleSuccessConfirm">
+  <DataForm ref="form" :data="inputs" :validation="v$" :request="{url: url, method: 'post', data: {_op: 'createPenalty'}}" @success="handleSuccessConfirm">
     <div class="row mt-2">
       <DataFormInput wrap="col-lg-6" name="fullName" label="Celé jméno" type="text" />
       <DataFormInput wrap="col-lg-6" name="birthdate" label="Narození" type="date" />
-      <DataFormInput wrap="col-lg-6" name="numberOP" label="Číslo OP *" type="text" :is-required="true" />
+      <DataFormInput wrap="col-lg-6" name="numberOP" label="Číslo OP *" type="text" />
     </div>
     <div class="row">
       <DataFormSelect :values="{'none':'bez vlasů', 'short': 'krátké', 'long': 'dlouhé'}" wrap="col-lg-6" name="hairType" label="Typ vlasů *" prompt="Typ vlasů" />
@@ -13,19 +13,20 @@
     </div>
   </DataForm>
   <br>
-  <button type="button" class="btn btn-sm btn-primary btn-success" @click="$refs.form.submit()">Odeslat</button>
+  <button type="button" class="btn btn-sm btn-primary btn-success" :disabled="v$.$invalid" @click="$refs.form.submit()">Odeslat</button>
   <br>
   <br>
-  <strong>Data z formuláře:</strong><br>
+  <strong>Data z formuláře:</strong>
+  <br>
   <code>
     {{ inputs }}
   </code>
 </template>
 <script>
 
-import moment from 'moment/moment.js';
 import useVuelidate from '@vuelidate/core';
-import { required} from '@vuelidate/validators';
+import { required } from '@vuelidate/validators';
+import { isValidDate, validateAgeOver18 } from '@/data/validations.js';
 
 export default {
   components: {},
@@ -33,15 +34,17 @@ export default {
   },
   emits: ['success'],
   setup () {
-    return { v$: useVuelidate(),};
+    return { v$: useVuelidate() };
   },
   data() {
     return {
       url: 'status/200',
       inputs: {
+        fullName: null,
+        birthdate: null,
         hairType: null,
-        fromDate: moment().format('YYYY-MM-DD'),
-        toDate: moment().format('YYYY-MM-DD'),
+        numberOP: null,
+        note: null,
       },
     };
   },
@@ -50,9 +53,9 @@ export default {
   validations() {
     return {
       inputs: {
-        hairType: {
-          required
-        },
+        hairType: { required },
+        numberOP: { required },
+        birthdate: { isValidDate, validateAgeOver18 },
       }
     };
   },

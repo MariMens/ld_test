@@ -12,49 +12,49 @@
     </div>
   </DataForm>
   <br>
-  <button type="button" class="btn btn-sm btn-primary btn-success" @click="$refs.form.submit()">Odeslat</button>
+  <button type="button" class="btn btn-sm btn-primary btn-success" :disabled="v$.$invalid" @click="$refs.form.submit()">Odeslat</button>
   <br>
   <br>
-  <strong>Data z formuláře:</strong><br>
+  <strong>Data z formuláře:</strong>
+  <br>
   <code>
     {{ inputs }}
   </code>
 </template>
 <script>
 
-import moment from 'moment/moment.js';
 import useVuelidate from '@vuelidate/core';
-import { required} from '@vuelidate/validators';
+import { required } from '@vuelidate/validators';
+import { isValidDate, validateAgeUnder18 } from '@/data/validations.js';
 
 export default {
   components: {},
-  props: {
-  },
+  props: {},
   emits: ['success'],
   setup () {
-    return { v$: useVuelidate(),};
+    return { v$: useVuelidate() };
   },
   data() {
     return {
       url: 'status/200',
       inputs: {
+        fullName: null,
+        birthdate: null,
         hairType: null,
-        fromDate: moment().format('YYYY-MM-DD'),
-        toDate: moment().format('YYYY-MM-DD'),
+        note: null,
       },
     };
-  },
-  mounted() {
   },
   validations() {
     return {
       inputs: {
-        hairType: {
-          required
-        },
+        hairType: { required },
+        birthdate: { isValidDate, validateAgeUnder18 },
       }
     };
+
   },
+  mounted() {},
   methods: {
     handleSuccessConfirm: function () {
       this.$toast.success('Záznam byl vytvořen.');
