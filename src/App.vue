@@ -6,10 +6,10 @@
     </div>
     <br><br>
     Pohlaví:
-    Muž <input type="radio" name="gender" value="male">
-    Žena <input type="radio" name="gender" value="female">
+    Muž <input v-model="gender" type="radio" name="gender" value="Muž">
+    Žena <input v-model="gender" type="radio" name="gender" value="Žena">
     <hr>
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component }" :gender="gender">
       <keep-alive :max="7">
         <component :is="Component" />
       </keep-alive>
@@ -23,6 +23,7 @@ export default {
   name: 'App',
   data() {
     return {
+      gender: '',
     };
   }
 };

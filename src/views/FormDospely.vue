@@ -1,4 +1,7 @@
 <template>
+  <span style="font-size: 0.9rem;">
+    Pohlaví: {{ gender ? gender : ' - ' }}
+  </span>
   <DataForm ref="form" :data="inputs" :validation="v$" :request="{url: url, method: 'post', data: {_op: 'createPenalty'}}" @success="handleSuccessConfirm">
     <div class="row mt-2">
       <DataFormInput wrap="col-lg-6" name="fullName" label="Celé jméno" type="text" />
@@ -31,6 +34,10 @@ import { isValidDate, validateAgeOver18 } from '@/data/validations.js';
 export default {
   components: {},
   props: {
+    gender: {
+      type: String,
+      default: '',
+    }
   },
   emits: ['success'],
   setup () {
