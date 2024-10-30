@@ -38,9 +38,9 @@ export default {
     gender: {
       type: String,
       default: '',
-    }
+    },
   },
-  emits: ['success'],
+  emits: ['success', 'update:note'],
   setup () {
     return { v$: useVuelidate() };
   },
@@ -82,6 +82,7 @@ export default {
   methods: {
     handleSuccessConfirm: function () {
       this.$toast.success('Záznam byl vytvořen.');
+      this.$emit('update:note', this.inputs.note);
     },
     resetHairColour() {
       if (!this.inputs.hairType || this.inputs.hairType === 'none') {

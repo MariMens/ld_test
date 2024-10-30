@@ -38,7 +38,7 @@ export default {
       default: '',
     }
   },
-  emits: ['success'],
+  emits: ['success', 'update:note'],
   setup () {
     return { v$: useVuelidate() };
   },
@@ -66,6 +66,7 @@ export default {
   methods: {
     handleSuccessConfirm: function () {
       this.$toast.success('Záznam byl vytvořen.');
+      this.$emit('update:note', this.inputs.note);
     }
   }
 };
