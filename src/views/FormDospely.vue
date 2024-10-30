@@ -6,7 +6,7 @@
     <div class="row mt-2">
       <DataFormInput wrap="col-lg-6" name="fullName" label="Celé jméno" type="text" />
       <DataFormInput wrap="col-lg-6" name="birthdate" label="Narození" type="date" />
-      <DataFormInput wrap="col-lg-6" name="numberOP" label="Číslo OP *" type="text" />
+      <DataFormInput wrap="col-lg-12" name="numberOP" label="Číslo OP *" type="text" />
     </div>
     <div class="row">
       <DataFormSelect :values="hairTypeOptions" wrap="col-lg-6" name="hairType" label="Typ vlasů *" prompt="Typ vlasů" @change="resetHairColour()" />
